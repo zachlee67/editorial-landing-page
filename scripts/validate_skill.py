@@ -10,12 +10,20 @@ Checks:
    repo, other than the known-safe placeholder numbers. This is the specific safeguard this
    skill family needs: reference/example templates should never carry a real client's
    contact info.
+5. No forbidden client name appears anywhere in the repo, checked against a NORMALIZED
+   version of each file: HTML tags stripped and URL-encoding decoded first. This exists
+   because a real leak once hid as `<a class="logo">HN <span>Clinic</span></a>` (split
+   across a tag) and `Hi%20HN%20Clinic%2C%20I...` (URL-encoded inside a wa.me link) - both
+   invisible to a plain literal-string search. Never trust a plain grep for this class of
+   check again; normalize first.
 
 Exit code 0 = pass, 1 = fail. No third-party dependencies (stdlib only) so it runs in CI
 with a bare `python3` and nothing else installed.
 """
+import html
 import re
 import sys
+import urllib.parse
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -27,6 +35,14 @@ ALLOWED_PHONE_NUMBERS = {
     "012-345 6789",
     "+60123456789",
 }
+
+# Real client names/brands that must never appear anywhere in this repo, in any form
+# (plain text, split across HTML tags, or URL-encoded). Add to this list whenever a real
+# client's name is used as a worked example and then scrubbed, so it can't silently
+# regress via a future edit or a copy/paste from an old draft.
+FORBIDDEN_NAMES = [
+    "hn clinic",
+]
 
 # Matches Malaysia/Singapore-style mobile numbers: 01X-XXXXXXX, +601XXXXXXXX, 601XXXXXXXX
 PHONE_PATTERN = re.compile(r"(?:\+?60|0)1[0-9][-\s]?\d{3}[-\s]?\d{4,5}")
@@ -124,12 +140,40 @@ def check_no_real_phone_numbers() -> None:
                 )
 
 
+def check_no_forbidden_names() -> None:
+    tag_pattern = re.compile(r"<[^>]+>")
+    for path in REPO_ROOT.rglob("*"):
+        if not path.is_file() or path.suffix not in TEXT_EXTENSIONS:
+            continue
+        if ".git" in path.parts:
+            continue
+        try:
+            raw = path.read_text(errors="ignore")
+        except Exception:
+            continue
+        # Normalize: decode URL-encoding, strip HTML tags (so text split across markup
+        # like "HN <span>Clinic</span>" still reads as "HN Clinic"), collapse whitespace.
+        decoded = urllib.parse.unquote(raw)
+        decoded = html.unescape(decoded)
+        no_tags = tag_pattern.sub(" ", decoded)
+        normalized = re.sub(r"\s+", " ", no_tags).lower()
+        for forbidden in FORBIDDEN_NAMES:
+            if forbidden in normalized:
+                fail(
+                    f"{path.relative_to(REPO_ROOT)} contains the forbidden name '{forbidden}' "
+                    f"once tags are stripped and URL-encoding is decoded. This must never "
+                    f"reappear in this repo, check for it hiding across a tag boundary or in "
+                    f"an encoded URL before committing."
+                )
+
+
 def main() -> int:
     frontmatter = check_skill_md()
     if frontmatter:
         check_name_matches_directory(frontmatter)
     check_referenced_files_exist()
     check_no_real_phone_numbers()
+    check_no_forbidden_names()
 
     if had_failure:
         print("\nValidation FAILED.")
