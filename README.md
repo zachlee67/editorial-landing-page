@@ -1,5 +1,7 @@
 # editorial-landing-page
 
+[![Validate skill](https://github.com/zachlee67/editorial-landing-page/actions/workflows/validate.yml/badge.svg)](https://github.com/zachlee67/editorial-landing-page/actions/workflows/validate.yml)
+
 A Claude Code / Claude.ai skill for building single-file HTML landing pages in XEDEA's editorial
 house style, for any industry: home services, real estate, education/tuition, professional
 services/agencies, F&B, e-commerce/DTC, SaaS, and more.
@@ -48,6 +50,17 @@ Everyone else picks up the change next time they `git pull` in their local clone
 folder into `~/.claude/skills/` (or just work directly from a symlinked clone so `git pull` is
 enough).
 
+## What it produces
+
+This is the same skeleton as `aesthetic-clinic-landing-page`, applied to a completely different
+industry (home services) to prove it isn't clinic-specific:
+
+![Preview of the bundled home-services example landing page](examples/preview.png)
+
+Open `examples/aircon-servicing-demo.html` in a browser to see the full page (FAQ accordion,
+sticky WhatsApp button, and form all work) rather than just the screenshot above. It's a
+fictional demo business, not a real client.
+
 ## Contents
 
 - `SKILL.md` — the skill's instructions: interview questions, house style rules, build/verify/
@@ -60,3 +73,11 @@ enough).
   `aesthetic-clinic-landing-page`, with all client-identifying details replaced by generic
   placeholders). Do not reuse its actual copy or colors for a real client, it's a worked example,
   not a fill-in-the-blank template.
+- `examples/aircon-servicing-demo.html` + `examples/preview.png` — a second worked example, built
+  fresh for a non-clinic industry (home services / aircon servicing) so it's obvious this skill
+  actually generalizes, not just the clinic skeleton with labels swapped.
+- `scripts/validate_skill.py` — checks `SKILL.md` has valid frontmatter, every file referenced in
+  `SKILL.md`/`README.md` actually exists, and that no real-looking phone/WhatsApp number has
+  crept into the repo. Run it yourself with `python3 scripts/validate_skill.py`; it also runs
+  automatically on every push via `.github/workflows/validate.yml`.
+- `LICENSE` — internal/proprietary, see the file for terms.

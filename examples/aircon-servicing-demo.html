@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aircon Chemical Wash Servicing in Klang Valley | Demo Aircon Care</title>
+<meta name="description" content="Fictional demo business. Shows how the editorial-landing-page skill adapts its clinic-origin house style to a home services business.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink-deep:#12303a;
+    --ink-deep-dark:#0b2027;
+    --teal:#2f8f8a;
+    --teal-dark:#256f6b;
+    --cream:#f6f7f4;
+    --paper:#ffffff;
+    --ink:#20262b;
+    --ink-soft:#565f63;
+    --line:#e2e6e2;
+    --second-tint:#eef6ee;
+    --second-tint-soft:#f6faf6;
+    --second-ink:#2b5e2f;
+    --radius:2px;
+    --wrap:1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;font-family:'Outfit', sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px;}
+  h1,h2,h3,h4{font-family:'Lora', serif;font-weight:600;line-height:1.15;margin:0;color:var(--ink-deep);}
+  p{margin:0 0 16px;color:var(--ink-soft);}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;font-family:'Outfit', sans-serif;font-weight:600;font-size:15px;text-decoration:none;border-radius:var(--radius);border:1px solid transparent;cursor:pointer;transition:transform .15s ease;}
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--teal);color:#fff;}
+  .btn-primary:hover{background:var(--teal-dark);}
+  .btn-second{background:var(--second-ink);color:#fff;}
+  .btn-second:hover{background:#1f451f;}
+
+  header.site{position:sticky;top:0;z-index:50;background:rgba(246,247,244,0.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);}
+  .site-bar{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:var(--wrap);margin:0 auto;}
+  .logo{font-family:'Lora', serif;font-weight:700;font-size:22px;color:var(--ink-deep);text-decoration:none;}
+  .logo span{color:var(--teal);}
+  .header-phone{font-size:14px;font-weight:600;color:var(--ink-deep);text-decoration:none;display:none;}
+  @media(min-width:640px){.header-phone{display:inline-block;}}
+  .header-cta{display:flex;align-items:center;gap:18px;}
+  .header-cta .btn{padding:10px 20px;font-size:14px;}
+
+  .hero{padding:64px 0 56px;}
+  .hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;}
+  @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:36px;}}
+  .hero h1{font-size:46px;letter-spacing:-0.01em;}
+  @media(max-width:640px){.hero h1{font-size:32px;}}
+  .hero-lede{font-size:18px;margin-top:20px;max-width:46ch;}
+  .signs-list{list-style:none;margin:24px 0 28px;padding:0;display:grid;gap:12px;}
+  .signs-list li{display:flex;align-items:flex-start;gap:12px;font-size:15px;color:var(--ink);font-weight:500;}
+  .signs-list li::before{content:"";flex:none;width:8px;height:8px;margin-top:7px;background:var(--teal);border-radius:50%;}
+  .hero-media{aspect-ratio:4/5;background:repeating-linear-gradient(135deg,#e9efe9,#e9efe9 12px,#e1e9e1 12px,#e1e9e1 24px);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:#8b9b8f;font-size:13px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;text-align:center;padding:20px;}
+
+  .trust-strip{background:var(--ink-deep);color:#fff;padding:22px 0;}
+  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:var(--wrap);margin:0 auto;padding:0 24px;text-align:center;}
+  @media(max-width:760px){.trust-grid{grid-template-columns:repeat(2,1fr);}}
+  .trust-grid div{font-size:13px;font-weight:600;color:#e6f2f0;}
+  .trust-grid div small{display:block;font-weight:400;color:#a9c6c2;font-size:11px;margin-top:4px;}
+
+  section{padding:80px 0;}
+  @media(max-width:640px){section{padding:52px 0;}}
+  .section-head{max-width:640px;margin:0 0 44px;}
+  .section-head h2{font-size:34px;}
+  @media(max-width:640px){.section-head h2{font-size:26px;}}
+  .center{text-align:center;margin-left:auto;margin-right:auto;}
+
+  .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  @media(max-width:900px){.card-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:560px){.card-grid{grid-template-columns:1fr;}}
+  .symptom-card{background:#fff;border:1px solid var(--line);}
+  .symptom-img{aspect-ratio:1/1;background:#e9efe9;display:flex;align-items:center;justify-content:center;color:#8b9b8f;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-align:center;padding:12px;}
+  .symptom-body{padding:18px 20px 22px;}
+  .symptom-body h4{font-size:17px;margin-bottom:8px;}
+  .symptom-body p{font-size:14px;margin:0;}
+
+  .explainer{display:grid;grid-template-columns:0.9fr 1.1fr;gap:52px;align-items:center;}
+  @media(max-width:900px){.explainer{grid-template-columns:1fr;}}
+  .explainer-media{background:#e9efe9;border:1px solid var(--line);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;color:#8b9b8f;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-align:center;padding:24px;}
+  .depth-table{width:100%;border-collapse:collapse;margin-top:22px;font-size:14px;}
+  .depth-table th{text-align:left;font-family:'Outfit';font-weight:700;color:var(--ink-deep);padding:10px 14px;border-bottom:2px solid var(--ink-deep);font-size:12px;text-transform:uppercase;}
+  .depth-table td{padding:12px 14px;border-bottom:1px solid var(--line);color:var(--ink-soft);}
+  .depth-table td:first-child{font-weight:600;color:var(--ink);white-space:nowrap;}
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+  @media(max-width:760px){.steps{grid-template-columns:1fr;}}
+  .step-num{font-family:'Lora',serif;font-size:40px;font-weight:600;color:var(--teal);display:block;margin-bottom:10px;line-height:1;}
+  .step h4{font-size:18px;margin-bottom:8px;}
+  .step p{font-size:14.5px;}
+
+  .benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+  @media(max-width:900px){.benefit-grid{grid-template-columns:repeat(2,1fr);}}
+  .benefit-card{background:#fff;border:1px solid var(--line);padding:26px 20px;}
+  .benefit-card h4{font-size:16.5px;margin-bottom:8px;}
+  .benefit-card p{font-size:13.5px;margin:0;}
+  .benefit-icon{width:36px;height:36px;border-radius:50%;background:var(--ink-deep);display:flex;align-items:center;justify-content:center;color:var(--teal);font-family:'Lora';font-weight:700;margin-bottom:14px;font-size:15px;}
+
+  .process-item{display:grid;grid-template-columns:70px 1fr;gap:22px;padding:26px 0;border-bottom:1px solid var(--line);}
+  .process-item:last-child{border-bottom:none;}
+  .process-item .num{font-family:'Lora',serif;font-size:30px;color:var(--teal);font-weight:600;}
+  .process-item h4{font-size:17px;margin-bottom:6px;}
+  .process-item .dur{font-size:12px;font-weight:600;color:var(--ink-deep);text-transform:uppercase;margin-top:6px;display:inline-block;}
+
+  .second-section{background:var(--second-tint-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .second-section h2, .second-section h3{color:var(--second-ink);}
+  .second-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;}
+  @media(max-width:900px){.second-grid{grid-template-columns:1fr;}}
+  .second-media{aspect-ratio:4/3;background:var(--second-tint);border:1.5px dashed #b9d9bb;display:flex;align-items:center;justify-content:center;color:var(--second-ink);font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-align:center;padding:22px;}
+  .check-list{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px;}
+  .check-list li{font-size:14.5px;color:var(--ink);font-weight:500;display:flex;gap:10px;}
+  .check-list li::before{content:"✓";flex:none;color:var(--second-ink);font-weight:700;}
+
+  .ba-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  @media(max-width:760px){.ba-grid{grid-template-columns:1fr;}}
+  .ba-card{background:#e9efe9;border:1px solid var(--line);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;color:#8b9b8f;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;text-align:center;padding:12px;}
+
+  .why-wrap{background:var(--ink-deep);color:#fff;}
+  .why-wrap .section-head h2{color:#fff;}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+  @media(max-width:760px){.why-grid{grid-template-columns:1fr;}}
+  .why-card h4{color:#fff;font-size:17px;margin-bottom:8px;}
+  .why-card p{color:#c3d6d3;font-size:14px;}
+
+  .testi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;}
+  @media(max-width:760px){.testi-grid{grid-template-columns:1fr;}}
+  .testi-card{background:#fff;border:1px solid var(--line);padding:28px 26px;}
+  .testi-card p{font-family:'Lora';font-style:italic;font-size:16px;color:var(--ink);margin-bottom:14px;}
+  .testi-name{font-size:13px;font-weight:700;color:var(--ink-deep);text-transform:uppercase;}
+  .testi-note{font-size:11px;color:#a5aaa6;margin-top:8px;}
+
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:20px 0;font-family:'Outfit';font-weight:600;font-size:16px;color:var(--ink-deep);display:flex;justify-content:space-between;gap:16px;}
+  .faq-q .plus{font-size:20px;color:var(--teal);flex:none;transition:transform .2s ease;}
+  .faq-item.open .faq-q .plus{transform:rotate(45deg);}
+  .faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .25s ease;}
+  .faq-item.open .faq-a{grid-template-rows:1fr;}
+  .faq-a-inner{overflow:hidden;}
+  .faq-a p{padding-bottom:20px;font-size:14.5px;margin:0;}
+
+  .final-cta{background:var(--ink-deep-dark);color:#fff;text-align:center;}
+  .final-cta h2{color:#fff;font-size:32px;}
+  .final-cta p{color:#c3d6d3;max-width:56ch;margin:14px auto 0;}
+  .form-shell{max-width:620px;margin:0 auto;background:var(--cream);border:1px solid var(--line);padding:40px 36px;}
+  @media(max-width:640px){.form-shell{padding:28px 20px;}}
+  .form-row{display:grid;gap:6px;margin-bottom:16px;}
+  .form-row label{font-size:13px;font-weight:600;color:var(--ink-deep);}
+  .form-row input, .form-row textarea, .form-row select{font-family:'Outfit';font-size:15px;padding:12px 14px;border:1px solid #d3dbd3;border-radius:var(--radius);background:#fff;color:var(--ink);}
+  .form-two{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media(max-width:520px){.form-two{grid-template-columns:1fr;}}
+  .form-shell .btn{width:100%;justify-content:center;padding:15px;margin-top:4px;}
+  .form-success{display:none;text-align:center;padding:36px 10px;}
+  .form-success.show{display:block;}
+
+  footer{background:var(--ink-deep-dark);color:#a2b6b3;padding:40px 0 90px;font-size:13px;}
+  .footer-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:22px;align-items:flex-start;}
+  .footer-grid .logo{color:#fff;}
+  .footer-grid .logo span{color:var(--teal);}
+  .footer-links{display:flex;gap:18px;flex-wrap:wrap;}
+  .footer-links a{text-decoration:none;color:#a2b6b3;}
+
+  .wa-float{position:fixed;right:20px;bottom:20px;z-index:100;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,0.25);text-decoration:none;animation:wa-pulse 2.4s infinite;}
+  @keyframes wa-pulse{0%{box-shadow:0 6px 18px rgba(0,0,0,0.25),0 0 0 0 rgba(37,211,102,0.5);}70%{box-shadow:0 6px 18px rgba(0,0,0,0.25),0 0 0 14px rgba(37,211,102,0);}100%{box-shadow:0 6px 18px rgba(0,0,0,0.25),0 0 0 0 rgba(37,211,102,0);}}
+  .wa-float svg{width:28px;height:28px;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="site-bar">
+    <a href="#top" class="logo">Demo <span>Aircon Care</span></a>
+    <div class="header-cta">
+      <a href="tel:+60123456789" class="header-phone">012-345 6789</a>
+      <a href="#book" class="btn btn-primary" style="padding:10px 20px;font-size:14px;">Book a Slot</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Chemical Wash: The Aircon Service<br>That Actually Fixes the Cooling.</h1>
+        <p class="hero-lede">If your aircon is running non-stop but the room still isn't cold, a basic servicing won't fix it. Chemical wash strips built-up grime from inside the coil and evaporator, the part a normal wipe-down never reaches.</p>
+        <p style="font-weight:600;color:var(--ink-deep);margin-bottom:10px;">The signs a normal service won't fix:</p>
+        <ul class="signs-list">
+          <li>Runs for hours but the room stays warm</li>
+          <li>Musty smell the moment you switch it on</li>
+          <li>Electricity bill climbing even with the same usage</li>
+          <li>Water dripping from the indoor unit</li>
+        </ul>
+        <div class="hero-ctas">
+          <a href="https://wa.me/60123456789?text=Hi%2C%20I%27d%20like%20to%20book%20a%20chemical%20wash%20service." class="btn btn-primary" target="_blank" rel="noopener">Book Now, From RM180</a>
+        </div>
+      </div>
+      <div class="hero-media">Hero image / video placeholder<br>(technician servicing a unit)</div>
+    </div>
+  </section>
+
+  <div class="trust-strip">
+    <div class="trust-grid">
+      <div>Licensed Technicians<small>Trained on all major brands</small></div>
+      <div>Same-Day Slots<small>Klang Valley coverage</small></div>
+      <div>Upfront Pricing<small>No surprise add-on fees</small></div>
+      <div>6-Month Warranty<small>On every chemical wash job</small></div>
+    </div>
+  </div>
+
+  <section id="concerns">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Still Not Cold? Here's What's Actually Wrong.</h2>
+        <p style="margin-top:14px;">Each of these traces back to the same cause: dirt and grime built up inside the coil and evaporator, where a normal wipe-down service can't reach.</p>
+      </div>
+      <div class="card-grid">
+        <div class="symptom-card"><div class="symptom-img">Image placeholder</div><div class="symptom-body"><h4>Weak Cooling</h4><p>Runs constantly but the room never quite reaches the set temperature.</p></div></div>
+        <div class="symptom-card"><div class="symptom-img">Image placeholder</div><div class="symptom-body"><h4>Musty Smell</h4><p>A damp, stale smell in the first few minutes after switching on.</p></div></div>
+        <div class="symptom-card"><div class="symptom-img">Image placeholder</div><div class="symptom-body"><h4>Rising Bills</h4><p>Higher electricity usage for the same hours of operation.</p></div></div>
+        <div class="symptom-card"><div class="symptom-img">Image placeholder</div><div class="symptom-body"><h4>Water Leaking</h4><p>Dripping from the indoor unit onto the wall or floor below.</p></div></div>
+        <div class="symptom-card"><div class="symptom-img">Image placeholder</div><div class="symptom-body"><h4>Ice Buildup</h4><p>Visible frost or ice forming on the indoor coil.</p></div></div>
+        <div class="symptom-card"><div class="symptom-img">Image placeholder</div><div class="symptom-body"><h4>Loud Noise</h4><p>Rattling or vibration that wasn't there when the unit was new.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="what-is" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap explainer">
+      <div>
+        <h2 style="font-size:32px;">What Makes Chemical Wash Different?</h2>
+        <p style="margin-top:16px;">A standard service wipes the visible parts and checks gas pressure. Chemical wash goes further: the coil and evaporator are removed, soaked, and rinsed with a proper cleaning chemical, clearing out the grime a normal service never touches.</p>
+        <table class="depth-table">
+          <thead><tr><th>Service</th><th>What Gets Cleaned</th><th>Best For</th></tr></thead>
+          <tbody>
+            <tr><td>Standard</td><td>Filter, casing, external wipe-down</td><td>Routine maintenance, light dust</td></tr>
+            <tr><td>Chemical Wash</td><td>Coil, evaporator, drainage, full strip-down</td><td>Weak cooling, smell, water leaks</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="explainer-media">Diagram placeholder<br>(coil cross-section, before/after grime)</div>
+    </div>
+  </section>
+
+  <section id="how-it-works">
+    <div class="wrap">
+      <div class="section-head center">
+        <h2>How a Chemical Wash Actually Works</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><span class="step-num">01</span><h4>Inspection</h4><p>Technician checks cooling performance, gas pressure, and drainage before starting.</p></div>
+        <div class="step"><span class="step-num">02</span><h4>Strip &amp; Wash</h4><p>Coil and evaporator are removed and washed with a proper cleaning chemical, not just wiped.</p></div>
+        <div class="step"><span class="step-num">03</span><h4>Reassemble &amp; Test</h4><p>Unit is reassembled and tested for cooling performance and drainage before the technician leaves.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head"><h2>What You Get</h2></div>
+      <div class="benefit-grid">
+        <div class="benefit-card"><div class="benefit-icon">1</div><h4>Colder Air</h4><p>Full-strip cleaning restores cooling closer to the unit's original performance.</p></div>
+        <div class="benefit-card"><div class="benefit-icon">2</div><h4>Lower Bills</h4><p>A clean coil cools more efficiently, using less electricity for the same result.</p></div>
+        <div class="benefit-card"><div class="benefit-icon">3</div><h4>Longer Lifespan</h4><p>Reduces strain on the compressor, the most expensive part to replace.</p></div>
+        <div class="benefit-card"><div class="benefit-icon">4</div><h4>6-Month Warranty</h4><p>Free callback if the same issue returns within 6 months.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process-wrap">
+    <div class="wrap">
+      <div class="section-head"><h2>Your Booking, Step by Step</h2></div>
+      <div class="process-list">
+        <div class="process-item"><span class="num">01</span><div><h4>Book a Slot</h4><p>Message on WhatsApp with your unit type and preferred time.</p><span class="dur">≈ 2 minutes</span></div></div>
+        <div class="process-item"><span class="num">02</span><div><h4>Technician Arrives</h4><p>Confirmed technician arrives within the booked window.</p><span class="dur">Same-day available</span></div></div>
+        <div class="process-item"><span class="num">03</span><div><h4>Chemical Wash Service</h4><p>Full strip-down, wash, reassemble, and performance test.</p><span class="dur">≈ 60-90 minutes per unit</span></div></div>
+        <div class="process-item"><span class="num">04</span><div><h4>Post-Service Check</h4><p>Technician confirms cooling performance with you before leaving.</p><span class="dur">≈ 10 minutes</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="second-section" id="second-offer">
+    <div class="wrap second-grid">
+      <div class="second-media">Future demo photo or video<br>(general servicing visit)</div>
+      <div>
+        <h3 style="font-size:28px;">Just Need a Routine Check? General Servicing Covers That.</h3>
+        <p style="margin-top:14px;">Not every visit needs a full chemical wash. General servicing covers filter cleaning, gas top-up, and a performance check for units that are cooling fine but due for routine maintenance.</p>
+        <ul class="check-list">
+          <li>Filter clean and external wipe-down</li>
+          <li>Gas pressure check and top-up if needed</li>
+          <li>Recommended every 3-4 months for daily-use units</li>
+        </ul>
+        <a href="https://wa.me/60123456789?text=Hi%2C%20I%27d%20like%20to%20ask%20about%20general%20servicing." class="btn btn-second" target="_blank" rel="noopener" style="margin-top:22px;">Ask About General Servicing</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="comparison" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head center">
+        <h2>Chemical Wash vs General Servicing</h2>
+        <p style="margin-top:14px;">Both keep your unit running. The difference is how deep the clean goes and what problem each one actually solves.</p>
+      </div>
+      <div style="overflow-x:auto;">
+        <table class="depth-table" style="min-width:560px;">
+          <thead><tr><th>&nbsp;</th><th>Chemical Wash</th><th>General Servicing</th></tr></thead>
+          <tbody>
+            <tr><td>What's Cleaned</td><td>Coil, evaporator, drainage (full strip-down)</td><td>Filter and external casing only</td></tr>
+            <tr><td>Best For</td><td>Weak cooling, smell, water leaks</td><td>Routine upkeep, units cooling fine</td></tr>
+            <tr><td>Frequency</td><td>Every 6-12 months</td><td>Every 3-4 months</td></tr>
+            <tr><td>Typical Duration</td><td>60-90 minutes per unit</td><td>20-30 minutes per unit</td></tr>
+            <tr><td>Starting Price</td><td>From RM180</td><td>From RM80</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="before-after">
+    <div class="wrap">
+      <div class="section-head center"><h2>Before &amp; After</h2></div>
+      <div class="ba-grid">
+        <div class="ba-card">Before/after placeholder 1<br>(coil grime)</div>
+        <div class="ba-card">Before/after placeholder 2<br>(coil grime)</div>
+        <div class="ba-card">Before/after placeholder 3<br>(coil grime)</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-wrap">
+    <div class="wrap">
+      <div class="section-head center"><h2>Why Book With Demo Aircon Care</h2></div>
+      <div class="why-grid">
+        <div class="why-card"><h4>Licensed &amp; Trained</h4><p>Technicians trained across major residential and commercial brands.</p></div>
+        <div class="why-card"><h4>Honest Recommendation</h4><p>We'll tell you plainly if your unit only needs general servicing, not a full chemical wash.</p></div>
+        <div class="why-card"><h4>Upfront Pricing</h4><p>Price confirmed on WhatsApp before the technician is booked, no surprise fees on arrival.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="wrap">
+      <div class="section-head center"><h2>What Customers Say</h2></div>
+      <div class="testi-grid">
+        <div class="testi-card"><p>"Placeholder quote. Replace with a real customer testimonial before publishing."</p><div class="testi-name">Customer Name</div><div class="testi-note">Awaiting real testimonial / consent</div></div>
+        <div class="testi-card"><p>"Placeholder quote. Replace with a real customer testimonial before publishing."</p><div class="testi-name">Customer Name</div><div class="testi-note">Awaiting real testimonial / consent</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" style="background:#fff;border-top:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head"><h2>Frequently Asked</h2></div>
+      <div class="faq-list">
+        <div class="faq-item"><button class="faq-q"><span>How often should I do a chemical wash?</span><span class="plus">+</span></button><div class="faq-a"><div class="faq-a-inner"><p>Most homes need one every 6 to 12 months, more often for units that run daily or in dusty areas.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q"><span>How long does the service take?</span><span class="plus">+</span></button><div class="faq-a"><div class="faq-a-inner"><p>A single unit typically takes 60 to 90 minutes for a full chemical wash.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q"><span>Is general servicing enough for a new unit?</span><span class="plus">+</span></button><div class="faq-a"><div class="faq-a-inner"><p>Usually yes for the first year. A chemical wash becomes worthwhile once you notice weak cooling, smell, or rising bills.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q"><span>Do you service commercial units too?</span><span class="plus">+</span></button><div class="faq-a"><div class="faq-a-inner"><p>Yes, message us on WhatsApp with your unit type and we'll confirm pricing and slot availability.</p></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="wrap">
+      <h2>Book a Slot Before the Weekend Rush</h2>
+      <p>Same-day slots fill up fast on weekends. Message us now to lock in your preferred time.</p>
+    </div>
+  </section>
+
+  <section class="form-wrap" id="book" style="background:var(--cream);padding-top:60px;">
+    <div class="wrap">
+      <div class="section-head center"><h2>Tell Us About Your Unit</h2></div>
+      <div class="form-shell">
+        <form id="leadForm">
+          <div class="form-two">
+            <div class="form-row"><label for="fname">Full Name *</label><input type="text" id="fname" name="fname" required></div>
+            <div class="form-row"><label for="fphone">Phone / WhatsApp *</label><input type="tel" id="fphone" name="fphone" required></div>
+          </div>
+          <div class="form-row"><label for="funit">Number of Units</label><select id="funit" name="funit"><option>1 unit</option><option>2-3 units</option><option>4+ units</option></select></div>
+          <div class="form-row"><label for="fmsg">Message (optional)</label><textarea id="fmsg" name="fmsg" rows="3"></textarea></div>
+          <button type="submit" class="btn btn-primary">Request a Booking Slot</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <h3>Thank you.</h3>
+          <p>Our team will confirm your slot on WhatsApp shortly.</p>
+          <a href="https://wa.me/60123456789" class="btn btn-primary" target="_blank" rel="noopener">Message on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <a href="#top" class="logo">Demo <span>Aircon Care</span></a>
+      <div class="footer-links">
+        <a href="tel:+60123456789">012-345 6789</a>
+      </div>
+    </div>
+    <div style="margin-top:24px;padding-top:18px;border-top:1px solid #1c3a42;font-size:12px;color:#6f8783;">
+      This is a fictional demo business built to show the editorial-landing-page skill applied to a
+      non-clinic industry. Not a real company.
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/60123456789?text=Hi%2C%20I%27d%20like%20to%20book%20a%20chemical%20wash%20service." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2c-5.514 0-9.997 4.478-9.997 9.997 0 1.763.462 3.486 1.34 5.003L2 22l5.115-1.334a9.958 9.958 0 004.89 1.246h.004c5.514 0 9.997-4.478 9.997-9.997 0-2.67-1.04-5.18-2.928-7.068A9.935 9.935 0 0012.004 2zm0 18.166h-.003a8.19 8.19 0 01-4.166-1.14l-.299-.177-3.037.792.811-2.96-.194-.304a8.172 8.172 0 01-1.256-4.38c0-4.523 3.68-8.203 8.207-8.203 2.192 0 4.253.854 5.802 2.404a8.15 8.15 0 012.399 5.805c-.001 4.524-3.68 8.163-8.264 8.163z"/></svg>
+</a>
+
+<script>
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var q = item.querySelector('.faq-q');
+    q.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(openItem){
+        if(openItem !== item) openItem.classList.remove('open');
+      });
+      item.classList.toggle('open', !isOpen);
+    });
+  });
+
+  var form = document.getElementById('leadForm');
+  var success = document.getElementById('formSuccess');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    form.style.display = 'none';
+    success.classList.add('show');
+  });
+</script>
+
+</body>
+</html>
