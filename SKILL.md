@@ -70,10 +70,15 @@ Do not start writing HTML until you know:
    rather than stock photos, except in verticals (F&B, home services, e-commerce) where the
    section-map flags real photos as a launch blocker rather than something you can placeholder
    around.
-7. **Competitor references** — if the operator has landing pages from competitors they like the
-   feel of, fetch 2-4 of them and note their section order and tone, but do not copy phrasing
-   verbatim, and do not treat a reference image/page as gospel if the operator's own established
-   style (from a prior round of feedback) disagrees with it — ask which should win.
+7. **Competitor references** — actively ask for these, don't just wait for the operator to
+   volunteer them: "Do you have 3-5 competitor landing pages you like the feel of?" Real
+   competitor URLs are one of the highest-signal inputs you can get; the clinic vertical this
+   skill descends from came from an operator who supplied 4 competitor pages upfront, and that's
+   what made the section order and tone land right on the first draft. If they have any, fetch
+   all of them (not just one or two) and note each one's section order, hero pattern, and tone.
+   Do not copy phrasing verbatim, and do not treat a reference page as gospel if the operator's
+   own established style (from a prior round of feedback) disagrees with it, ask which should
+   win. If they have none, proceed without, but still ask.
 
 Ask these one at a time or in a short batch, whichever fits the conversation, but get real
 answers before generating a full page. A page built on assumptions gets thrown out and redone.

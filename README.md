@@ -89,6 +89,35 @@ Everyone else picks up the change next time they `git pull` in their local clone
 folder into `~/.claude/skills/` (or just work directly from a symlinked clone so `git pull` is
 enough).
 
+## Versioning: how to get an old version back
+
+This repo is never force-pushed or rewritten once it's out (the one exception being a genuine
+leaked-secret emergency, and even then, only with explicit sign-off first). Every meaningful
+change gets a normal commit on top, plus a version tag, so nothing is ever lost:
+
+```
+git tag -a v1.1.0 -m "describe what changed in this version"
+git push origin v1.1.0
+```
+
+We also cut a [GitHub Release](https://github.com/zachlee67/editorial-landing-page/releases)
+from each tag so past versions show up in their own panel on GitHub, not just as commits.
+
+**To get back an old version** six months from now (or any time):
+
+```
+git clone https://github.com/zachlee67/editorial-landing-page.git
+cd editorial-landing-page
+git checkout v1.0.0        # or whichever version you want
+```
+
+Or just browse the [Releases page](https://github.com/zachlee67/editorial-landing-page/releases)
+on GitHub and download that version's source directly, no `git` needed.
+
+Bump the version (`v1.0.0` → `v1.1.0` for a small change, `v2.0.0` for a rules-breaking change to
+the house style or section map) whenever you tag. `main` always reflects the latest version;
+every tagged version stays reachable forever alongside it.
+
 ## What it produces
 
 This is the same skeleton as `aesthetic-clinic-landing-page`, applied to a completely different
