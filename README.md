@@ -39,16 +39,57 @@ prompt still works. But naming your industry and offer clearly up front gets you
 first draft, since it decides which row of `references/industry-section-map.md` to apply and
 what several sections should actually contain (or whether to drop them).
 
-**A complete prompt looks like this:**
+**Copy-paste template.** Adapted from the same prompt structure that produced
+`aesthetic-clinic-landing-page`'s bundled example, generalized to any industry. Replace every
+`[bracket]`, delete any line that doesn't apply to you, and paste the whole thing:
 
-> Build me a landing page like the clinic one, but for my [industry] business, [Business Name].
-> Primary offer is [service/product]; we also do [secondary offer] but that's lower priority.
-> Contact channel is WhatsApp, number is [number]. Show "From RM[X]" in the CTA. Our website is
-> [url] if you want our real brand colors. We don't have before/after photos or testimonials
-> ready, leave those as placeholders. Ask me before publishing anything.
+> These are landing pages I like from competitors or similar businesses, please follow their
+> UX/layout:
+> - [competitor/reference landing page URL 1]
+> - [competitor/reference landing page URL 2]
+> - [competitor/reference landing page URL 3]
+> (3-5 is ideal if you have them. If you don't have any yet, just say so, Claude will still ask
+> what style/tone you want instead of guessing.)
+>
+> Now build me a landing page like the ones above, for my [industry] business, [Business Name].
+> If I don't have photos or videos yet, just leave them as blank, clearly labeled placeholders
+> for now.
+>
+> Here's my business's own website, use it for the real brand colors/fonts/logo: [your website
+> URL]
+>
+> Primary offer: [service/product name]
+> - Key benefits: [paste your offer's key benefits here]
+> - USP: [paste what makes you different from competitors here]
+>
+> Secondary offer (optional, lower priority): [secondary offer name, or delete this whole section
+> if there isn't one]
+> - Key benefits: [paste key benefits here]
+> - USP: [paste USP here]
+>
+> I want a high-converting landing page for [Google Ads/Meta Ads] in [country/market]. Mainly
+> focus on [primary offer], with [secondary offer] mentioned at lower weight.
+>
+> No pricing shown. (Or: show "From [currency][X]" in the CTA button if you do want a starting
+> price.)
+>
+> Contact channel is [WhatsApp / a calendar-booking link / a "start free trial" button / direct
+> checkout], number or link is [number/url].
+>
+> Mainly optimize for [form submissions / whatever your main conversion goal is], but also add a
+> floating [WhatsApp/contact] button if that fits. The form itself should sit at the very end of
+> the page, not near the top.
+>
+> I don't want this to look AI-generated or like generic "AI slop."
+>
+> Ask me questions before you generate anything you're not sure about.
 
 **What actually moves the output:**
 
+- **Give 3-5 reference landing pages** if you have any you like the feel of. This is the
+  highest-signal input you can give, it's what taught the original clinic build its section
+  order and tone in the first place, rather than Claude guessing at what "good" looks like for
+  your industry.
 - **Name your industry explicitly** ("home services", "real estate", "tuition centre", "law
   firm", "SaaS", etc.). This is what tells Claude which section-mapping to use, home services
   gets literal before/after photos and WhatsApp, SaaS gets a product screenshot in the hero and
