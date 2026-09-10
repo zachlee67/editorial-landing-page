@@ -1,30 +1,29 @@
 ---
 name: editorial-landing-page
 description: >-
-  Build a single self-contained HTML landing page in XEDEA's editorial house style for ANY
-  industry (home services, real estate, education/tuition, professional services/agencies,
-  F&B, e-commerce/DTC, SaaS, and more) — not just aesthetic clinics. Use this when the operator
-  asks for "a landing page like the clinic one but for [other business]", "no AI slop landing
-  page", "pain-point landing page", or wants XEDEA's specific style: editorial serif headings, a
+  Build a single self-contained HTML landing page in an editorial house style, for most
+  industries (home services, real estate, education/tuition, professional services/agencies,
+  F&B, e-commerce/DTC, SaaS, and more). Use this when the operator asks for "no AI slop landing
+  page", "pain-point landing page", or wants this specific style: editorial serif headings, a
   pain-point-led hero that still names the product/service, no small "eyebrow" labels above
   headings, no em/en dashes used as sentence connectors, a concern/pain-point card grid, a
   mechanism or process explainer, a benefits grid, a primary vs secondary offer comparison table
   when there are two related offers, an FAQ accordion, a sticky contact CTA (WhatsApp by
   default in Malaysia/Singapore), and a lead form placed at the very end of the page. For a
-  Malaysia/Singapore aesthetic clinic or medical aesthetic treatment specifically, prefer
-  `aesthetic-clinic-landing-page` instead, which has the clinic-specific interview questions and
-  a fully worked clinic example already built in. For a landing page where the operator wants a
-  different visual language entirely (not this editorial serif house style) or wants the broader
-  research-driven section-pattern library, use the general `landing-page` skill instead.
+  Malaysia/Singapore aesthetic clinic or medical aesthetic treatment specifically, the
+  aesthetic-clinic-landing-page skill has extra clinic-specific interview questions and may fit
+  better. For a landing page where the operator wants a different visual language entirely (not
+  this editorial serif house style) or wants a broader research-driven section-pattern library,
+  use the general landing-page skill instead.
 ---
 
 # Editorial Landing Page
 
-This is the industry-agnostic sibling of `aesthetic-clinic-landing-page`. Same structural DNA
-and the same house style rules, generalized so any business can use it, not just clinics. It
-exists because the underlying pattern (pain-point hero, alternating-background sections, no AI
-tells, form-always-last) turned out to work for reasons that have nothing to do with medicine —
-they're about how a real person reads a page before they act on it.
+Builds a single-file HTML landing page for paid-traffic (Google/Meta Ads) offers, in an
+editorial house style that works across most industries: pain-point hero, alternating-background
+sections, no AI tells, form-always-last. The style choices exist for a concrete reason each,
+rooted in how a real person actually reads a page before acting on it, not decoration for its
+own sake.
 
 Read `references/industry-section-map.md` before building for any industry — it maps each
 generic slot in the skeleton to what that slot actually means for that vertical, based on 2026
@@ -32,10 +31,10 @@ conversion research. If the operator's industry isn't listed there, do the same 
 search ("[industry] landing page best practices") before guessing at the mapping, and consider
 adding your findings back to that file for next time.
 
-`assets/reference-template.html` is the same worked example used by `aesthetic-clinic-landing-page`
-(all client-identifying details replaced with generic placeholders). It's a structural/CSS
-reference, not a fill-in-the-blank template — read it to understand the patterns, then build a
-new file with the industry's own section meanings and the operator's own brand.
+`examples/aircon-servicing-demo.html` is a full worked example (a fictional home-services
+business) — read it to understand the structural/CSS patterns, then build a new file with the
+operator's own industry's section meanings and their own brand. It's a reference, not a
+fill-in-the-blank template: don't reuse its actual copy or colors for a real client.
 
 ## Step 1: Interview before building anything
 
@@ -72,21 +71,20 @@ Do not start writing HTML until you know:
    around.
 7. **Competitor references** — actively ask for these, don't just wait for the operator to
    volunteer them: "Do you have 3-5 competitor landing pages you like the feel of?" Real
-   competitor URLs are one of the highest-signal inputs you can get; the clinic vertical this
-   skill descends from came from an operator who supplied 4 competitor pages upfront, and that's
-   what made the section order and tone land right on the first draft. If they have any, fetch
-   all of them (not just one or two) and note each one's section order, hero pattern, and tone.
-   Do not copy phrasing verbatim, and do not treat a reference page as gospel if the operator's
-   own established style (from a prior round of feedback) disagrees with it, ask which should
-   win. If they have none, proceed without, but still ask.
+   competitor URLs are one of the highest-signal inputs you can get, far more useful than any
+   generic best-practice guidance for getting the section order and tone right on the first
+   draft. If they have any, fetch all of them (not just one or two) and note each one's section
+   order, hero pattern, and tone. Do not copy phrasing verbatim, and do not treat a reference page
+   as gospel if the operator's own established style (from a prior round of feedback) disagrees
+   with it, ask which should win. If they have none, proceed without, but still ask.
 
 Ask these one at a time or in a short batch, whichever fits the conversation, but get real
 answers before generating a full page. A page built on assumptions gets thrown out and redone.
 
 ## Step 2: The house style rules
 
-These came from direct user feedback across many iterations on the original clinic vertical, and
-they generalize cleanly. Bend them only when the operator explicitly asks for the exception:
+These came from direct operator feedback across many iterations, and they generalize cleanly
+across industries. Bend them only when the operator explicitly asks for the exception:
 
 - **No small "eyebrow" label above headings** (no `"— SOME LABEL"` sitting above an `<h1>`/`<h2>`).
   It was tried, the operator disliked it everywhere, and it was removed site-wide. Headings stand
